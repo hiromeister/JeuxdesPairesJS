@@ -1,30 +1,40 @@
-let cartes = ['img/ane.jpg', 'img/chat.jpg', 'img/chien.jpg', 'img/lama.jpg', 'img/lapins.jpg', 'img/lionne.jpg', 'img/ours.jpg', 'img/ane.jpg', 'img/chat.jpg', 'img/chien.jpg', 'img/lama.jpg', 'img/lapins.jpg', 'img/lionne.jpg', 'img/ours.jpg'];
+let cartes = [
+ {url:'img/ane.jpg', nom: 'ane'},
+ {url:'img/chat.jpg', nom: 'chat'},
+ {url:'img/chien.jpg', nom: 'chien'},
+ {url:'img/lama.jpg', nom: 'lama'},
+ {url:'img/lapins.jpg', nom: 'lapins'},
+ {url:'img/lionne.jpg', nom: 'lionne'},
+ {url:'img/ours.jpg', nom: 'ours'},
+ {url:'img/ane.jpg', nom: 'ane2'},
+ {url:'img/chat.jpg', nom: 'chat2'},
+ {url:'img/chien.jpg', nom: 'chien2'},
+ {url:'img/lama.jpg', nom: 'lama2'},
+ {url:'img/lapins.jpg', nom: 'lapins2'},
+ {url:'img/lionne.jpg', nom: 'lionne2'},
+ {url:'img/ours.jpg', nom: 'ours2 '},
+]
 
-let cardz=[];
-
-// change img
-
-let recup = document.querySelectorAll('img');
-
-for (let i=0; i < cartes.length; i++){ 
-		recup[i].addEventListener("click", function(){
-			recup[i].setAttribute("src",cartes[i]);
-			console.log(cartes[i]);
-		  let zz = cartes[i];
-		  cardz.push(zz);
-		  console.log(cardz);
-
-		  if (cardz[i] == cartes[i]){
-		  	console.log("YIIIIIIIIIIIIIIIIIIIIIIIIIII")
-		  }
+let cardz = [];
 
 
-		})
+recupImg = document.querySelectorAll('img');
+
+
+  for (let i = 0; i < cartes.length; i++){	
+	recupImg[i].addEventListener("click", function(e){
+		e.currentTarget.setAttribute("src", cartes[i].url);
+         let oui = cartes[i].url;
+         cardz.push(oui);
+         console.log(oui);
+         console.log(e.currentTarget.src);
+         console.log(cardz);
+
+         
+
+		if(cardz[i] == 1 && cardz[0] !== cardz[1]){
+		console.log("zzzzzzzzzzzzzz");
 	}
+	})
+}
 
-			
-
-	
-		// if (cartes.src == cardz.src){
-		// 	console.log("azerty");
-		// }
