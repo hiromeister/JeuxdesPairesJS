@@ -16,25 +16,44 @@ let cartes = [
 ]
 
 let cardz = [];
-
-
 recupImg = document.querySelectorAll('img');
 
 
-  for (let i = 0; i < cartes.length; i++){	
-	recupImg[i].addEventListener("click", function(e){
+  	for (let i = 0; i < cartes.length; i++){	
+	    recupImg[i].addEventListener("click", function(e){
 		e.currentTarget.setAttribute("src", cartes[i].url);
          let oui = cartes[i].url;
          cardz.push(oui);
-         console.log(oui);
-         console.log(e.currentTarget.src);
-         console.log(cardz);
 
-         
+        if (cardz.length == 2){
+         		if( cardz[0] == cardz[1]){
+         			alert("ok");
+         			cardz = [];
+         			console.log(cardz);
 
-		if(cardz[i] == 1 && cardz[0] !== cardz[1]){
-		console.log("zzzzzzzzzzzzzz");
+         		} else { 
+         			if (cardz[0] != cardz[1]){
+		         		setTimeout(function(){ 
+		         		  
+			         		 for (let j = 0; j < cardz.length; j++){
+				         		recupImg[j].setAttribute("src", "img/doscarte.png");
+
+				         	}
+				         },1650)
+		         		}
+				         		 
+		         cardz = [];	 	
+         		} 
+        	} 
+		})
 	}
-	})
-}
+		         			
+	         		 
+
+
+
+
+         	
+
+
 
